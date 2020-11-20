@@ -14,7 +14,7 @@
 
 from pomegranate import *
 import numpy as np
-get_ipython().run_line_magic('pylab', 'inline')
+#get_ipython().run_line_magic('pylab', 'inline')
 
 
 # Let's start by creating our hmm's. Since this is a simple example, we will only have 2 states, rigged and unrigged, with discrete distributions.
