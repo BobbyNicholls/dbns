@@ -5,11 +5,17 @@ from pomegranate import (
     ExponentialDistribution,
     GeneralMixtureModel,
     MultivariateGaussianDistribution,
+    BernoulliDistribution,
 )
 import pandas as pd
 import numpy as np
 
-X = pd.DataFrame({"A": [1, 2, 3, 4, 5], "B": [1, 2, 3, 4, 5]})
+X = pd.DataFrame({"A": [1, 0, 1, 0, 1], "B": [1, 1, 1, 1, 0]})
+
+x = BernoulliDistribution(0.4)
+
+vals = []
+[vals.append(x.sample()) for i in range(1000)]
 
 model = NaiveBayes(
     [NormalDistribution(5, 2), UniformDistribution(0, 10), ExponentialDistribution(1.0)]
